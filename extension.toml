@@ -1,7 +1,7 @@
-id = "neosolarized"
-name = "NeoSolarized Theme"
-version = "0.0.2"
+id = "solarized"
+name = "Solarized"
+version = "0.0.1"
 schema_version = 1
-authors = ["Carlo Caione <carlo.caione@gmail.com>"]
-description = "NeoSolarized Zed theme."
-repository = "https://github.com/carlocaione/NeoSolarized.zed"
+authors = ["harmtemolder"]
+description = "Precision colors for machines and people"
+repository = "https://github.com/harmtemolder/Solarized.zed"
