@@ -1,6 +1,6 @@
 id = "solarized"
 name = "Solarized"
-version = "0.0.1"
+version = "0.1.0"
 schema_version = 1
 authors = ["harmtemolder"]
 description = "Precision colors for machines and people"

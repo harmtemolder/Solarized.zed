@@ -6,7 +6,8 @@ with open("schema.json") as schema_json:
     schema = json.load(schema_json)
 
 prefix = '        "'
-suffix = '": solarized[""] + "ff",'
+# suffix = '": solarized[""] + "ff",'
+suffix = '": solarized[""],'
 
 print(
     prefix

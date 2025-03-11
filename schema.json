@@ -19,6 +19,9 @@
         }
     },
     "definitions": {
+        "AccentContent": {
+            "type": ["string", "null"]
+        },
         "AppearanceContent": {
             "type": "string",
             "enum": ["light", "dark"]
@@ -30,6 +33,10 @@
         "HighlightStyleContent": {
             "type": "object",
             "properties": {
+                "background_color": {
+                    "default": null,
+                    "type": ["string", "null"]
+                },
                 "color": {
                     "default": null,
                     "type": ["string", "null"]
@@ -94,10 +101,28 @@
             "description": "The content of a serialized theme.",
             "type": "object",
             "properties": {
+                "accents": {
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AccentContent"
+                    }
+                },
                 "background": {
                     "description": "Background Color. Used for the app background and blank panels or windows.",
                     "default": null,
                     "type": ["string", "null"]
+                },
+                "background.appearance": {
+                    "default": null,
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/WindowBackgroundContent"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
                 },
                 "border": {
                     "description": "Border color. Used for most borders, is usually a high contrast color.",
@@ -190,6 +215,11 @@
                     "default": null,
                     "type": ["string", "null"]
                 },
+                "editor.document_highlight.bracket_background": {
+                    "description": "Highlighted brackets background color.\n\nMatching brackets in the cursor scope are highlighted with this background color.",
+                    "default": null,
+                    "type": ["string", "null"]
+                },
                 "editor.document_highlight.read_background": {
                     "description": "Read-access of a symbol, like reading a variable.\n\nA document highlight is a range inside a text document which deserves special attention. Usually a document highlight is visualized by changing the background color of its range.",
                     "default": null,
@@ -209,6 +239,14 @@
                     "type": ["string", "null"]
                 },
                 "editor.highlighted_line.background": {
+                    "default": null,
+                    "type": ["string", "null"]
+                },
+                "editor.indent_guide": {
+                    "default": null,
+                    "type": ["string", "null"]
+                },
+                "editor.indent_guide_active": {
                     "default": null,
                     "type": ["string", "null"]
                 },
@@ -256,7 +294,7 @@
                     "type": ["string", "null"]
                 },
                 "elevated_surface.background": {
-                    "description": "Border color. Used for elevated surfaces, like a context menu, popup, or dialog.",
+                    "description": "Background color. Used for elevated surfaces, like a context menu, popup, or dialog.",
                     "default": null,
                     "type": ["string", "null"]
                 },
@@ -396,11 +434,27 @@
                     "default": null,
                     "type": ["string", "null"]
                 },
+                "pane_group.border": {
+                    "default": null,
+                    "type": ["string", "null"]
+                },
                 "panel.background": {
                     "default": null,
                     "type": ["string", "null"]
                 },
                 "panel.focused_border": {
+                    "default": null,
+                    "type": ["string", "null"]
+                },
+                "panel.indent_guide": {
+                    "default": null,
+                    "type": ["string", "null"]
+                },
+                "panel.indent_guide_active": {
+                    "default": null,
+                    "type": ["string", "null"]
+                },
+                "panel.indent_guide_hover": {
                     "default": null,
                     "type": ["string", "null"]
                 },
@@ -437,6 +491,11 @@
                     "default": null,
                     "type": ["string", "null"]
                 },
+                "scrollbar.thumb.background": {
+                    "description": "The color of the scrollbar thumb.",
+                    "default": null,
+                    "type": ["string", "null"]
+                },
                 "scrollbar.thumb.border": {
                     "description": "The border color of the scrollbar thumb.",
                     "default": null,
@@ -454,11 +513,6 @@
                 },
                 "scrollbar.track.border": {
                     "description": "The border color of the scrollbar track.",
-                    "default": null,
-                    "type": ["string", "null"]
-                },
-                "scrollbar_thumb.background": {
-                    "description": "The color of the scrollbar thumb.",
                     "default": null,
                     "type": ["string", "null"]
                 },
@@ -505,6 +559,11 @@
                     "type": ["string", "null"]
                 },
                 "tab_bar.background": {
+                    "default": null,
+                    "type": ["string", "null"]
+                },
+                "terminal.ansi.background": {
+                    "description": "Terminal ANSI background color.",
                     "default": null,
                     "type": ["string", "null"]
                 },
@@ -677,6 +736,10 @@
                     "default": null,
                     "type": ["string", "null"]
                 },
+                "title_bar.inactive_background": {
+                    "default": null,
+                    "type": ["string", "null"]
+                },
                 "toolbar.background": {
                     "default": null,
                     "type": ["string", "null"]
@@ -708,6 +771,11 @@
                     "type": ["string", "null"]
                 }
             }
+        },
+        "WindowBackgroundContent": {
+            "description": "The background appearance of the window.",
+            "type": "string",
+            "enum": ["opaque", "transparent", "blurred"]
         }
     }
 }

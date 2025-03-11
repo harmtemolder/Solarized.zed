@@ -30,6 +30,7 @@ solarized = {
 
 
 def solarized_theme(solarized):
+    accents = [solarized["blue"]]
     players = [
         {
             "background": solarized[color],
@@ -66,7 +67,11 @@ def solarized_theme(solarized):
         "link_uri": {"color": solarized["violet"]},
         "number": {"color": solarized["magenta"]},
         "operator": {"color": solarized["green"]},
-        "predictive": {"color": solarized["fg3"], "font_style": "italic"},
+        "predictive": {
+            "background_color": solarized["green"] + "66",
+            "color": solarized["fg3"],
+            "font_style": "italic",
+        },
         "preproc": {"color": solarized["orange"]},
         "primary": {"color": solarized["fg1"]},
         "property": {"color": solarized["blue"]},
@@ -88,7 +93,9 @@ def solarized_theme(solarized):
         "variant": {"color": solarized["blue"]},
     }
     theme = {
+        "accents": accents,
         "background": solarized["bg1"],
+        "background.appearance": "opaque",
         "border": solarized["fg2"],
         "border.disabled": None,
         "border.focused": solarized["fg1"],
@@ -109,11 +116,14 @@ def solarized_theme(solarized):
         "editor.active_line_number": solarized["fg1"],
         "editor.active_wrap_guide": solarized["fg2"],
         "editor.background": solarized["bg1"],
-        "editor.document_highlight.read_background": solarized["blue"] + "99",
-        "editor.document_highlight.write_background": solarized["blue"] + "66",
+        "editor.document_highlight.bracket_background": solarized["blue"] + "66",
+        "editor.document_highlight.read_background": solarized["blue"] + "33",
+        "editor.document_highlight.write_background": solarized["blue"] + "33",
         "editor.foreground": solarized["fg1"],
         "editor.gutter.background": solarized["bg1"],
         "editor.highlighted_line.background": solarized["bg1"],
+        "editor.indent_guide": solarized["bg2"],
+        "editor.indent_guide_active": solarized["orange"],
         "editor.invisible": solarized["bg2"],
         "editor.line_number": solarized["fg2"],
         "editor.subheader.background": solarized["bg1"],
@@ -154,8 +164,12 @@ def solarized_theme(solarized):
         "modified.background": solarized["bg1"],
         "modified.border": solarized["yellow"],
         "pane.focused_border": solarized["fg1"],
+        "pane_group.border": solarized["fg2"],
         "panel.background": solarized["bg2"],
         "panel.focused_border": solarized["blue"],
+        "panel.indent_guide": solarized["fg2"],
+        "panel.indent_guide_active": solarized["orange"],
+        "panel.indent_guide_hover": solarized["fg1"],
         "players": players,
         "predictive": solarized["fg3"],
         "predictive.background": solarized["bg2"],
@@ -163,12 +177,12 @@ def solarized_theme(solarized):
         "renamed": solarized["magenta"],
         "renamed.background": solarized["bg1"],
         "renamed.border": solarized["magenta"],
+        "scrollbar.thumb.background": solarized["bg2"],
         "scrollbar.thumb.border": None,
         "scrollbar.thumb.hover_background": solarized["fg2"],
         "scrollbar.track.background": None,
         "scrollbar.track.border": solarized["bg2"],
-        "scrollbar_thumb.background": solarized["bg2"],
-        "search.match_background": solarized["yellow"] + "66",
+        "search.match_background": solarized["yellow"] + "99",
         "status_bar.background": solarized["bg2"],
         "success": solarized["green"],
         "success.background": solarized["bg1"],
@@ -178,6 +192,7 @@ def solarized_theme(solarized):
         "tab.active_background": solarized["bg1"],
         "tab.inactive_background": solarized["bg2"],
         "tab_bar.background": solarized["bg2"],
+        "terminal.ansi.background": solarized["bg1"],
         "terminal.ansi.black": solarized["base02"],
         "terminal.ansi.blue": solarized["blue"],
         "terminal.ansi.bright_black": solarized["base03"],
@@ -212,6 +227,7 @@ def solarized_theme(solarized):
         "text.muted": solarized["fg2"],
         "text.placeholder": solarized["fg2"],
         "title_bar.background": solarized["bg2"],
+        "title_bar.inactive_background": solarized["bg2"],
         "toolbar.background": solarized["bg1"],
         "unreachable": solarized["violet"],
         "unreachable.background": solarized["bg1"],
@@ -259,7 +275,7 @@ solarized_light = {
 }
 
 solarized_dict = {
-    "$schema": "https://zed.dev/schema/themes/v0.1.0.json",
+    "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
     "author": "harmtemolder",
     "name": "Solarized",
     "themes": [solarized_dark, solarized_light],
