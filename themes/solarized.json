@@ -11,7 +11,7 @@
           "#268bd2"
         ],
         "background": "#002b36",
-        "background.appearance": "opaque",
+        "background.appearance": "transparent",
         "border": "#586e75",
         "border.disabled": null,
         "border.focused": "#839496",
@@ -128,9 +128,9 @@
             "selection": "#b5890066"
           }
         ],
-        "predictive": "#93a1a1",
-        "predictive.background": "#073642",
-        "predictive.border": "#93a1a1",
+        "predictive": "#d33682",
+        "predictive.background": "#002b36",
+        "predictive.border": "#d33682",
         "renamed": "#d33682",
         "renamed.background": "#002b36",
         "renamed.border": "#d33682",
@@ -206,9 +206,8 @@
             "color": "#859900"
           },
           "predictive": {
-            "background_color": "#85990066",
-            "color": "#93a1a1",
-            "font_style": "italic"
+            "background_color": "#002b36",
+            "color": "#d33682"
           },
           "preproc": {
             "color": "#cb4b16"
@@ -325,7 +324,7 @@
           "#268bd2"
         ],
         "background": "#fdf6e3",
-        "background.appearance": "opaque",
+        "background.appearance": "transparent",
         "border": "#93a1a1",
         "border.disabled": null,
         "border.focused": "#657b83",
@@ -442,9 +441,9 @@
             "selection": "#b5890066"
           }
         ],
-        "predictive": "#586e75",
-        "predictive.background": "#eee8d5",
-        "predictive.border": "#586e75",
+        "predictive": "#d33682",
+        "predictive.background": "#fdf6e3",
+        "predictive.border": "#d33682",
         "renamed": "#d33682",
         "renamed.background": "#fdf6e3",
         "renamed.border": "#d33682",
@@ -520,9 +519,8 @@
             "color": "#859900"
           },
           "predictive": {
-            "background_color": "#85990066",
-            "color": "#586e75",
-            "font_style": "italic"
+            "background_color": "#fdf6e3",
+            "color": "#d33682"
           },
           "preproc": {
             "color": "#cb4b16"
