@@ -5,6 +5,10 @@ Constructs themes/solarized.json
 
 Notes:
 - Transparency is supported, just append to hex (e.g. `80` for 50%)
+- More info:
+  - https://zed.dev/docs/themes
+  - https://zed.dev/docs/extensions/themes
+  - https://zed.dev/schema/themes/v0.2.0.json
 """
 
 import json
@@ -137,15 +141,15 @@ def solarized_theme(solarized):
         "error.background": solarized["bg1"],
         "error.border": solarized["red"],
         "ghost_element.active": solarized["fg1"],
-        "ghost_element.background": solarized["bg1"],
+        "ghost_element.background": solarized["bg2"],  # buttons
         "ghost_element.disabled": solarized["fg2"],
-        "ghost_element.hover": solarized["bg2"],
+        "ghost_element.hover": solarized["blue"] + "66",
         "ghost_element.selected": solarized["blue"] + "66",
         "hidden": solarized["fg2"],
         "hidden.background": solarized["bg1"],
         "hidden.border": solarized["bg1"],
-        "hint": solarized["fg2"],
-        "hint.background": solarized["bg2"],
+        "hint": solarized["fg2"] + "AA",  # inline debug values
+        "hint.background": solarized["bg1"] + "00",
         "hint.border": solarized["fg2"],
         "icon": solarized["fg1"],
         "icon.accent": solarized["blue"],
@@ -162,29 +166,29 @@ def solarized_theme(solarized):
         "modified": solarized["yellow"],
         "modified.background": solarized["bg1"],
         "modified.border": solarized["yellow"],
-        "pane.focused_border": solarized["fg1"],
-        "pane_group.border": solarized["fg2"],
-        "panel.background": solarized["bg2"],
+        "pane.focused_border": solarized["blue"],
+        "pane_group.border": solarized["fg1"],
+        "panel.background": solarized["bg2"],  # e.g. left dock
         "panel.focused_border": solarized["blue"],
         "panel.indent_guide": solarized["fg2"],
         "panel.indent_guide_active": solarized["orange"],
         "panel.indent_guide_hover": solarized["fg1"],
         "players": players,
         "predictive": solarized["magenta"],
-        "predictive.background": solarized["bg1"],
+        "predictive.background": solarized["bg1"] + "00",
         "predictive.border": solarized["magenta"],
         "renamed": solarized["magenta"],
-        "renamed.background": solarized["bg1"],
+        "renamed.background": solarized["bg1"] + "00",
         "renamed.border": solarized["magenta"],
-        "scrollbar.thumb.background": solarized["fg1"] + "66",
+        "scrollbar.thumb.background": solarized["bg2"] + "BB",
         "scrollbar.thumb.border": None,
-        "scrollbar.thumb.hover_background": solarized["fg1"] + "99",
+        "scrollbar.thumb.hover_background": solarized["bg2"],
         "scrollbar.track.background": None,
         "scrollbar.track.border": solarized["bg2"],
         "search.match_background": solarized["yellow"] + "99",
         "status_bar.background": solarized["bg2"],
         "success": solarized["green"],
-        "success.background": solarized["bg1"],
+        "success.background": solarized["bg1"] + "00",
         "success.border": solarized["green"],
         "surface.background": solarized["bg1"],
         "syntax": syntax,
@@ -242,11 +246,11 @@ def solarized_theme(solarized):
 
 solarized.update(
     {
-        "bg1": solarized["base03"],
-        "bg2": solarized["base02"],
-        "fg1": solarized["base0"],
-        "fg2": solarized["base01"],
-        "fg3": solarized["base1"],
+        "bg1": solarized["base03"],  # background
+        "bg2": solarized["base02"],  # background highlights
+        "fg1": solarized["base0"],  # body text / default code / primary content
+        "fg2": solarized["base01"],  # comments / secondary content
+        "fg3": solarized["base1"],  # optional emphasized content
     }
 )
 
@@ -255,16 +259,17 @@ solarized_dark = {
     "name": "Solarized Dark",
     "style": solarized_theme(solarized),
 }
+print("Added Solarized Dark")
 
 # Light
 
 solarized.update(
     {
-        "bg1": solarized["base3"],
-        "bg2": solarized["base2"],
-        "fg1": solarized["base00"],
-        "fg2": solarized["base1"],
-        "fg3": solarized["base01"],
+        "bg1": solarized["base3"],  # background
+        "bg2": solarized["base2"],  # background highlights
+        "fg1": solarized["base00"],  # body text / default code / primary content
+        "fg2": solarized["base1"],  # comments / secondary content
+        "fg3": solarized["base01"],  # optional emphasized content
     }
 )
 solarized_light = {
@@ -272,6 +277,7 @@ solarized_light = {
     "name": "Solarized Light",
     "style": solarized_theme(solarized),
 }
+print("Added Solarized Light")
 
 solarized_dict = {
     "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
@@ -280,5 +286,7 @@ solarized_dict = {
     "themes": [solarized_dark, solarized_light],
 }
 
-with open("themes/solarized.json", "w") as solarized_json:
+json_file = "themes/solarized.json"
+with open(json_file, "w") as solarized_json:
     json.dump(solarized_dict, solarized_json, indent=2)
+    print(f"Wrote to {json_file}")
