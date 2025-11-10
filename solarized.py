@@ -225,7 +225,7 @@ def solarized_theme(solarized):
         "terminal.dim_foreground": solarized["fg2"],
         "terminal.foreground": solarized["fg1"],
         "text": solarized["fg1"],
-        "text.accent": solarized["fg3"],
+        "text.accent": solarized["blue"],
         "text.disabled": solarized["fg2"],
         "text.muted": solarized["fg2"],
         "text.placeholder": solarized["fg2"],
