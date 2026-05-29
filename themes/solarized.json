@@ -39,7 +39,7 @@
         "editor.gutter.background": "#002b36",
         "editor.highlighted_line.background": "#002b36",
         "editor.indent_guide": "#073642",
-        "editor.indent_guide_active": "#cb4b16",
+        "editor.indent_guide_active": "#586e75",
         "editor.invisible": "#073642",
         "editor.line_number": "#586e75",
         "editor.subheader.background": "#002b36",
@@ -84,8 +84,8 @@
         "panel.background": "#073642",
         "panel.focused_border": "#268bd2",
         "panel.indent_guide": "#586e75",
-        "panel.indent_guide_active": "#cb4b16",
-        "panel.indent_guide_hover": "#839496",
+        "panel.indent_guide_active": "#839496",
+        "panel.indent_guide_hover": "#93a1a1",
         "players": [
           {
             "background": "#268bd2",
@@ -352,7 +352,7 @@
         "editor.gutter.background": "#fdf6e3",
         "editor.highlighted_line.background": "#fdf6e3",
         "editor.indent_guide": "#eee8d5",
-        "editor.indent_guide_active": "#cb4b16",
+        "editor.indent_guide_active": "#93a1a1",
         "editor.invisible": "#eee8d5",
         "editor.line_number": "#93a1a1",
         "editor.subheader.background": "#fdf6e3",
@@ -397,8 +397,8 @@
         "panel.background": "#eee8d5",
         "panel.focused_border": "#268bd2",
         "panel.indent_guide": "#93a1a1",
-        "panel.indent_guide_active": "#cb4b16",
-        "panel.indent_guide_hover": "#657b83",
+        "panel.indent_guide_active": "#657b83",
+        "panel.indent_guide_hover": "#586e75",
         "players": [
           {
             "background": "#268bd2",
